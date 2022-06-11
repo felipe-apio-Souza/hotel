@@ -13,8 +13,6 @@ public class Hotel {
     @Column(nullable = false)
     private String endereco;
 
-    
-
     public String getCnpj() {
         return cnpj;
     }
