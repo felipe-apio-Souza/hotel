@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Contratar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false)
     private Date data;
     @Column(nullable = false)
@@ -22,7 +22,7 @@ public class Contratar {
     @Column(nullable = false)
     private String cnpj;
 
-    public Contratar(Integer id, Date data, String cpf, String cnpj) {
+    public Contratar(Long id, Date data, String cpf, String cnpj) {
         this.id = id;
         this.data = data;
         this.cpf = cpf;
@@ -30,10 +30,10 @@ public class Contratar {
     }
     public Contratar() {
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public Date getData() {

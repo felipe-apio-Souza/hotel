@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false)
     private Date data;
     @Column(nullable = false)
@@ -25,16 +25,16 @@ public class Conta {
     
     public Conta() {
     }
-    public Conta(Integer id, Date data, Double salarios, Double custosHospedagem) {
+    public Conta(Long id, Date data, Double salarios, Double custosHospedagem) {
         this.id = id;
         this.data = data;
         this.salarios = salarios;
         this.custosHospedagem = custosHospedagem;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public Date getData() {
