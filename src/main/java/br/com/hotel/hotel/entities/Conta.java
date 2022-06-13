@@ -21,16 +21,12 @@ public class Conta {
     private Double salarios;
     @Column(nullable = false)
     private Double custosHospedagem;
-
+    @Column(nullable = false)
+    private Administrador administrador;
     
     public Conta() {
     }
-    public Conta(Long id, Date data, Double salarios, Double custosHospedagem) {
-        this.id = id;
-        this.data = data;
-        this.salarios = salarios;
-        this.custosHospedagem = custosHospedagem;
-    }
+    
     public Long getId() {
         return id;
     }

@@ -21,13 +21,10 @@ public class Contratar {
     private String cpf;
     @Column(nullable = false)
     private String cnpj;
-
-    public Contratar(Long id, Date data, String cpf, String cnpj) {
-        this.id = id;
-        this.data = data;
-        this.cpf = cpf;
-        this.cnpj = cnpj;
-    }
+    @Column(nullable = false)
+    private Administrador administrador;
+    
+    
     public Contratar() {
     }
     public Long getId() {
@@ -54,6 +51,11 @@ public class Contratar {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
+    }
     
 }
