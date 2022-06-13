@@ -9,11 +9,16 @@ import javax.persistence.Table;
 @Table(name = "Candidatos")
 public class Candidatos {
 
-        @Id
-        @Column(nullable = false)
-        private String cpf;
+        private Pessoa pessoa;
         @Column
         private String curriculo;
+        @Column(nullable = false)
+        private String email;
+        @Column(nullable = false)
+        private String numero;
+        @Column(nullable = false)
+        private String endereco;
+        @Column(nullable = false)
 
         public String getCpf() {
             return cpf;
@@ -31,6 +36,37 @@ public class Candidatos {
             this.curriculo = curriculo;
         }
 
+        public String getEmail() {
+            return email;
+        }
+    
+        public void setEmail(String email) {
+            this.email = email;
+        }
+    
+        public String getNumero() {
+            return numero;
+        }
+    
+        public void setNumero(String numero) {
+            this.numero = numero;
+        }
+    
+        public String getEndereco() {
+            return endereco;
+        }
+    
+        public void setEndereco(String endereco) {
+            this.endereco = endereco;
+        }
+    
+        public String getNome() {
+            return nome;
+        }
+    
+        public void setEndereco(String nome) {
+            this.nome = nome;
+        }
         public Candidatos() {
 
         }
