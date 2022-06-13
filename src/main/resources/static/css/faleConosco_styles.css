@@ -120,25 +120,37 @@
     
 }
 .form-trabalhe-title{
-    width: 75%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
+    
 
 }
-.form-trabalhe-title h3{
+.form-trabalhe-title h3,p{
     color: white;
+   
 }
-.form-trabalhe-title p{
-    color: white;
-    
-}
+
+
 .form-trabalhe form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+}
+.form-trabalhe form input{
+    width: 250px;
+    margin: 10px;
+}
+.form-trabalhe form .cv,.enviar{
+    background-color:#0595CF;
+    border: transparent;
+    height: 35px;
+    color: white;
 }
 .trabalhe-imagen img{
     width: 100%;
