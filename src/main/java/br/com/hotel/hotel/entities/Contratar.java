@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Contratar")
-public class Contratar e{
+public class Contratar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
