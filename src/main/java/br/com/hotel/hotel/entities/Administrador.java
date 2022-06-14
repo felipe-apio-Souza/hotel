@@ -14,18 +14,17 @@ public class Administrador {
     private Integer id;
     @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
+    private String senha;
+
+
     public Administrador() {
     }
-    private String senha;
+    
     public String getCnpj() {
         return cnpj;
     }
-    public Administrador(String cnpj, Integer id, String email, String senha) {
-        this.cnpj = cnpj;
-        this.id = id;
-        this.email = email;
-        this.senha = senha;
-    }
+    
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
