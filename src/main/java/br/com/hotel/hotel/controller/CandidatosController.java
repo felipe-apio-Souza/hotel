@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CandidatosController {
 
-    @GetMapping("/candidatos")
+    @GetMapping("/index/candidatos")
     public String candidatos(){
         return "candidatos";
     }

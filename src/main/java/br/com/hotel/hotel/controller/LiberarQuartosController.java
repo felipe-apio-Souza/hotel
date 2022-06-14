@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LiberarQuartosController {
 
-    @GetMapping("/liberarQuartos")
+    @GetMapping("/funcionario/liberarQuartos")
     public String liberarQuartos(){
         return "liberarQuartos";
     }
