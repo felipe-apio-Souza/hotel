@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.hotel.hotel.entities.Quarto;
 
-public Interface QuartoRepositories extends JpaRepository<Quarto, Long>{
+public interface QuartoRepositories extends JpaRepository<Quarto, Long>{
     
 }

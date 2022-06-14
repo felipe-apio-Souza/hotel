@@ -16,9 +16,9 @@ public class Quarto {
     @Column(nullable = false)
     private Boolean disponibilidade;
     @Column(nullable = false)
-    private Interger QtdCamaCasal;
+    private Integer QtdCamaCasal;
     @Column(nullable = false)
-    private Interger QtdCamaSolteiro;
+    private Integer QtdCamaSolteiro;
     @Column(nullable = false)
     private Boolean limpeza;
     @Column(nullable = false)
