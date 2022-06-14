@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 public class LiberarQuartos{
     @Id
@@ -13,7 +16,11 @@ public class LiberarQuartos{
     private Long id;
 
     //Refencia many to one
+    @OneToMany
+    @JoinColumn(name = "id")
     private Long idQuarto;
+    @OneToOne
+    @JoinColumn(name = "id")
     private Long idFuncionario;
 
     @Column(nullable = false, name = "HoraLiberacaoQuarto")

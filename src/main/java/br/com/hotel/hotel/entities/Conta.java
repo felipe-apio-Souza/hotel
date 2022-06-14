@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,12 +23,22 @@ public class Conta {
     private Double salarios;
     @Column(nullable = false)
     private Double custosHospedagem;
-    @Column(nullable = false)
+
+    @OneToOne
+    @JoinColumn(name = "cnpj")
     private Administrador administrador;
     
     public Conta() {
     }
     
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
+    }
+
     public Long getId() {
         return id;
     }

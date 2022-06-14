@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,11 +20,12 @@ public class Contratar {
     private Long id;
     @Column(nullable = false)
     private Date data;
-    @Column(nullable = false)
-    private String cpf;
-    @Column(nullable = false)
-    private String cnpj;
-    @Column(nullable = false)
+
+    @OneToMany
+    @JoinColumn(name = "cpf")
+    private Candidatos candidatos;
+    @OneToOne
+    @JoinColumn(name = "cnpj")
     private Administrador administrador;
     
     
@@ -33,24 +37,19 @@ public class Contratar {
     public void setId(Long id) {
         this.id = id;
     }
+    public Candidatos getCandidatos() {
+        return candidatos;
+    }
+    public void setCandidatos(Candidatos candidatos) {
+        this.candidatos = candidatos;
+    }
     public Date getData() {
         return data;
     }
     public void setData(Date data) {
         this.data = data;
     }
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    public String getCnpj() {
-        return cnpj;
-    }
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
+    
     public Administrador getAdministrador() {
         return administrador;
     }
