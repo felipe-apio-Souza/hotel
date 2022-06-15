@@ -1,27 +1,48 @@
 package br.com.hotel.hotel.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity 
+@Table(name = "LiberarQuartos")
 public class LiberarQuartos{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //Refencia many to one
+    //relacionemtnos 
     @OneToMany
-    @JoinColumn(name = "id")
-    private Long idQuarto;
+    @JoinColumn(name = "id_quarto")
+    private List<Quarto> quartos;
     @OneToOne
-    @JoinColumn(name = "id")
-    private Long idFuncionario;
+    @JoinColumn(name = "id_funcionario")
+    private Funcionario funcionario;
+
+    public List<Quarto> getQuartos() {
+        return quartos;
+    }
+
+    public void setQuartos(List<Quarto> quartos) {
+        this.quartos = quartos;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
 
     @Column(nullable = false, name = "HoraLiberacaoQuarto")
     private Date horaLiberacao;
@@ -35,22 +56,6 @@ public class LiberarQuartos{
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getIdQuarto() {
-        return idQuarto;
-    }
-
-    public void setIdQuarto(Long idQuarto) {
-        this.idQuarto = idQuarto;
-    }
-
-    public Long getIdFuncionario() {
-        return idFuncionario;
-    }
-
-    public void setIdFuncionario(Long idFuncionario) {
-        this.idFuncionario = idFuncionario;
     }
 
     public Date getHoraLiberacao() {

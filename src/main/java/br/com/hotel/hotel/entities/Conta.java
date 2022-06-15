@@ -24,8 +24,10 @@ public class Conta {
     @Column(nullable = false)
     private Double custosHospedagem;
 
+
+    //relacionamentos
     @OneToOne
-    @JoinColumn(name = "cnpj")
+    @JoinColumn(name = "cnpj_administrador")
     private Administrador administrador;
     
     public Conta() {

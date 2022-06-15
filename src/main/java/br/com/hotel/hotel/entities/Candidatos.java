@@ -3,6 +3,8 @@ package br.com.hotel.hotel.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +22,27 @@ public class Candidatos {
         private String numero;
         @Column(nullable = false)
         private String endereco;
+
+        //relacionamentos 0 a 1 arrumar abaixo
+        @OneToOne
+        @JoinColumn(name = "id_funcionario")
+        private Funcionario funcionario;
+        @OneToOne
+        @JoinColumn(name = "id_contratar")
+        private Contratar contratar;
         
+        public Funcionario getFuncionario() {
+            return funcionario;
+        }
+        public void setFuncionario(Funcionario funcionario) {
+            this.funcionario = funcionario;
+        }
+        public Contratar getContratar() {
+            return contratar;
+        }
+        public void setContratar(Contratar contratar) {
+            this.contratar = contratar;
+        }
         public Candidatos() {
 
         }
