@@ -1,6 +1,7 @@
 package br.com.hotel.hotel.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,11 +22,12 @@ public class Contratar {
     @Column(nullable = false)
     private Date data;
 
+    //relacionamentos
     @OneToMany
-    @JoinColumn(name = "cpf")
-    private Candidatos candidatos;
+    @JoinColumn(name = "id_candidato")
+    private List<Candidatos> candidatos;
     @OneToOne
-    @JoinColumn(name = "cnpj")
+    @JoinColumn(name = "cnpj_administrador")
     private Administrador administrador;
     
     
@@ -37,10 +39,11 @@ public class Contratar {
     public void setId(Long id) {
         this.id = id;
     }
-    public Candidatos getCandidatos() {
+    
+    public List<Candidatos> getCandidatos() {
         return candidatos;
     }
-    public void setCandidatos(Candidatos candidatos) {
+    public void setCandidatos(List<Candidatos> candidatos) {
         this.candidatos = candidatos;
     }
     public Date getData() {

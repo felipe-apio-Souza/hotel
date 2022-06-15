@@ -24,8 +24,10 @@ public class FaleConosco {
     @Column(nullable = false)
     private String mensagem;
 
+
+    //relacionemtnos
     @OneToOne
-    @JoinColumn(name = "cnpj")
+    @JoinColumn(name = "cnpj_administrador")
     private Administrador administrador;
     public FaleConosco() {
     }
