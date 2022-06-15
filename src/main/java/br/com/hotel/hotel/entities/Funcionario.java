@@ -40,9 +40,6 @@ public class Funcionario{
     @JoinColumn(name = "id_liberaQuarto")
     private List<LiberarQuartos> LiberarQuartos;
     @OneToOne
-    @JoinColumn(name = "id_Candidato")
-    private Candidatos candidato;
-    @OneToOne
     @JoinColumn(name = "cnpj_administrador")
     private Administrador administrador;
     @OneToMany
@@ -57,14 +54,6 @@ public class Funcionario{
 
     public void setLiberarQuartos(List<LiberarQuartos> liberarQuartos) {
         LiberarQuartos = liberarQuartos;
-    }
-
-    public Candidatos getCandidato() {
-        return candidato;
-    }
-
-    public void setCandidato(Candidatos candidato) {
-        this.candidato = candidato;
     }
 
     public Administrador getAdministrador() {

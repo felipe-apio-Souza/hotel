@@ -23,20 +23,13 @@ public class Candidatos {
         @Column(nullable = false)
         private String endereco;
 
-        //relacionamentos 0 a 1 arrumar abaixo
-        @OneToOne
-        @JoinColumn(name = "id_funcionario")
-        private Funcionario funcionario;
+        //relacionamentos
         @OneToOne
         @JoinColumn(name = "id_contratar")
         private Contratar contratar;
         
-        public Funcionario getFuncionario() {
-            return funcionario;
-        }
-        public void setFuncionario(Funcionario funcionario) {
-            this.funcionario = funcionario;
-        }
+        
+        
         public Contratar getContratar() {
             return contratar;
         }
