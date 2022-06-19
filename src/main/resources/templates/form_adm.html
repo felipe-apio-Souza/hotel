@@ -10,6 +10,10 @@
 <body>
     <div class="container-fluid">
         <div class="text-center"><h2> [[${pageTitle}]] </h2></div>
+
+        <div th:if="${mensagem}" class="alert alert-warning alert-dismissible fade show text text-center" role="alert">
+            [[${mensagem}]]
+        </div>
         
         <form th:action="@{/administrador/save}" th:method="post" th:object="${adm}"
         style="max-width: 500px; margin: 0 auto;">
