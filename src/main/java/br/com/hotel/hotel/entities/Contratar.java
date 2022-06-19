@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,9 +25,7 @@ public class Contratar {
     @OneToMany
     @JoinColumn(name = "id_candidato")
     private List<Candidatos> candidatos;
-    @OneToOne
-    @JoinColumn(name = "cnpj_administrador")
-    private Administrador administrador;
+    
     
     
     public Contratar() {
@@ -53,11 +50,6 @@ public class Contratar {
         this.data = data;
     }
     
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
+    
     
 }

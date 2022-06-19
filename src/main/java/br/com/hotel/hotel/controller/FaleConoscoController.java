@@ -1,12 +1,14 @@
 package br.com.hotel.hotel.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
 public class FaleConoscoController {
-    @GetMapping("/index/faleconosco")
-    public String faleconosco(){
-        return "faleconosco";
+
+    //default
+    @RequestMapping("/faleConosco")
+    public String index(){
+        return "faleConosco";
     }
 }

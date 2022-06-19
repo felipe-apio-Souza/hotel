@@ -36,9 +36,7 @@ public class Quarto {
     @OneToOne
     @JoinColumn(name = "id_hospede")
     private Hospede hospede;
-    @OneToOne
-    @JoinColumn(name = "cnpj_administrador")
-    private Administrador administrador;
+    
     @OneToOne
     @JoinColumn(name = "id_liberaQuartos")
     private LiberarQuartos liberarQuartos;
@@ -49,12 +47,7 @@ public class Quarto {
     public void setHospede(Hospede hospede) {
         this.hospede = hospede;
     }
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
+    
     public LiberarQuartos getLiberarQuartos() {
         return liberarQuartos;
     }
