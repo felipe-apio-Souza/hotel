@@ -1,222 +1,262 @@
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    #header {
-        width: 100%;
-        height: 20%;
-    }
-    
-    #navegador {
-        margin-bottom: 25px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .ulNav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 20px 0px 20px 0px;
-        gap: 5px 25px;
-        list-style: none;
-        height: 20px;
-    }
-    
-    .link {
-        text-decoration: none;
-        margin: 10px;
-        letter-spacing: 2px;
-        color: black;
-    }
-    
-    .link:hover {
-        color: #c58b05;
-        border-bottom: 2px solid #c58b05;
-        padding-bottom: 3px;
-        font-weight: bold;
-    }
-    
-    .nav-redes {
-        margin-left: 50px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .nav-redes img {
-        margin: 0px 10px 0px 10px;
-    }
-    /*MAIN*/
-    
-    .formulario {
-        margin-top: 50px;
-        width: 500px;
-        height: 500px;
-        background-color: #012952;
-    }
-    
-    .formulario form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 100px;
-    }
-    
-    .formulario form label {
-        display: flex;
-        justify-content: center;
-        color: #c58b05;
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .formulario button {
-        border: 1px solid #c58b05;
-        background-color: #012952;
-        color: #c58b05;
-        width: 250px;
-        height: 50px;
-    }
-    
-    .usuario {
-        width: 250px;
-    }
-    
-    .senha {
-        width: 250px;
-    }
-    
-    .formulario button:hover {
-        background-color: #c58b05;
-        color: white;
-        cursor: pointer;
-    }
-    
-    .div-button-uno {
-        margin-top: 50px;
-    }
-    /*FORM TRABALHE*/
-    
-    #section {
-        width: 100%;
-        height: 640px;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #e4a207;
-    }
-    
-    .trabalhe {
-        width: 50%;
-        height: 640px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    
-    .form-trabalhe-title {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    
-    .form-trabalhe-title h3,
-    p {
-        color: white;
-    }
-    
-    .form-faleconosco form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    
-    .form-faleconosco form input {
-        width: 250px;
-        margin: 10px;
-    }
-    
-    .checkDiv {
-        width: 300px;
-        display: inline-block;
-    }
-    
-    .checkDiv .form-check-input {
-        width: 20px;
-    }
-    
-    .checkDiv .form-check-label {
-        opacity: 0.6;
-        width: 250px;
-        font-size: 10px;
-    }
-    
-    textarea {
-        min-height: 100px;
-        max-height: 100px;
-    }
-    
-    label.check-label {
-        width: 100px;
-    }
-    
-    .form-trabalhe form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    
-    .form-trabalhe form input {
-        width: 250px;
-        margin: 10px;
-    }
-    
-    .form-trabalhe form .cv,
-    .enviar {
-        background-color: #0595CF;
-        border: transparent;
-        height: 35px;
-        color: white;
-    }
-    
-    .trabalhe-imagen img {
-        width: 100%;
-        height: 640px;
-    }
-    /*FIM FORM TRABALHE*/
-    /*FIN MAIN*/
-    /*FOOTER*/
-    
-    #footer {
-        width: 100%;
-        height: 250px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #012952;
-    }
-    
-    .footer-section h3,
-    .footer-data-h3 {
-        color: #c58b05;
-        font-size: 15px;
-    }
-    
-    .footer-section p {
-        color: #F7F4EE;
-    }
-    
-    .footer-data p {
-        color: #F7F4EE;
-        margin-bottom: none;
-    }
-    /*FIM FOOTER*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    width: 100%;
+    height: 20%;
+}
+
+#navegador {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.ulNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+    gap: 5px 25px;
+    list-style: none;
+    height: 20px;
+}
+
+.link {
+    text-decoration: none;
+    margin: 10px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.link:hover {
+    color: #c58b05;
+    border-bottom: 2px solid #c58b05;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.nav-redes {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-redes img {
+    margin: 0px 10px 0px 10px;
+}
+
+
+/*MAIN*/
+
+.formulario {
+    margin-top: 50px;
+    width: 500px;
+    height: 500px;
+    background-color: #012952;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.formulario form label {
+    display: flex;
+    justify-content: center;
+    color: #c58b05;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario button {
+    border: 1px solid #c58b05;
+    background-color: #012952;
+    color: #c58b05;
+    width: 250px;
+    height: 50px;
+}
+
+.usuario {
+    width: 250px;
+}
+
+.senha {
+    width: 250px;
+}
+
+.formulario button:hover {
+    background-color: #c58b05;
+    color: white;
+    cursor: pointer;
+}
+
+.div-button-uno {
+    margin-top: 50px;
+}
+
+
+/* FORM FALE CONOSCO */
+
+.conosco {
+    padding-left: 50%;
+    margin: 100px;
+    height: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.form-faleconosco form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-faleconosco form input {
+    width: 250px;
+    margin: 20px;
+}
+
+.checkDiv {
+    width: 350px;
+    display: inline-block;
+}
+
+.checkDiv .form-check-input {
+    width: 20px;
+    margin-left: 50px;
+}
+
+.checkDiv .form-check-label {
+    opacity: 0.6;
+    width: 200px;
+    font-size: 15px;
+}
+
+textarea {
+    margin: 20px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.aceitareenviar {
+    background-color: #e4a207;
+    border: transparent;
+    height: 35px;
+    color: white;
+}
+
+
+/* label.form-check-label {
+        width: 400px;
+    } */
+
+
+/* FIM FALE CONOSCO */
+
+
+/* ------- */
+
+
+/*FORM TRABALHE*/
+
+#section {
+    width: 100%;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e4a207;
+}
+
+.trabalhe {
+    width: 50%;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-trabalhe-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form-trabalhe-title h3,
+p {
+    color: white;
+}
+
+.form-trabalhe form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-trabalhe form input {
+    width: 250px;
+    margin: 10px;
+}
+
+.form-trabalhe form .cv,
+.enviar {
+    background-color: #0595CF;
+    border: transparent;
+    height: 35px;
+    color: white;
+}
+
+.trabalhe-imagen img {
+    width: 100%;
+    height: 640px;
+}
+
+
+/*FIM FORM TRABALHE*/
+
+
+/*FIN MAIN*/
+
+
+/*FOOTER*/
+
+#footer {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #012952;
+}
+
+.footer-section h3,
+.footer-data-h3 {
+    color: #c58b05;
+    font-size: 15px;
+}
+
+.footer-section p {
+    color: #F7F4EE;
+}
+
+.footer-data p {
+    color: #F7F4EE;
+    margin-bottom: none;
+}
+
+
+/*FIM FOOTER*/
