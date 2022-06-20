@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,13 +19,14 @@ public class Quarto {
     @Column(nullable = false)
     private Boolean disponibilidade;
     @Column(nullable = false)
-    private Integer QtdCamaCasal;
+    private Integer qtdCamaCasal;
     @Column(nullable = false)
-    private Integer QtdCamaSolteiro;
+    private Integer qtdCamaSolteiro;
     @Column(nullable = false)
     private Boolean limpeza;
     @Column(nullable = false)
-    private String foto;
+    @Lob
+    private byte[] imagem;
     @Column(nullable = false)
     private String titulo;
     @Column(nullable = false)
@@ -33,6 +35,7 @@ public class Quarto {
     private Double precoDiaria;
 
     //relacionamentos
+    /* 
     @OneToOne
     @JoinColumn(name = "id_hospede")
     private Hospede hospede;
@@ -54,6 +57,7 @@ public class Quarto {
     public void setLiberarQuartos(LiberarQuartos liberarQuartos) {
         this.liberarQuartos = liberarQuartos;
     }
+    */
     public Long getId() {
         return id;
     }
@@ -67,16 +71,16 @@ public class Quarto {
         this.disponibilidade = disponibilidade;
     }
     public Integer getQtdCamaCasal() {
-        return QtdCamaCasal;
+        return qtdCamaCasal;
     }
     public void setQtdCamaCasal(Integer qtdCamaCasal) {
-        QtdCamaCasal = qtdCamaCasal;
+        this.qtdCamaCasal = qtdCamaCasal;
     }
     public Integer getQtdCamaSolteiro() {
-        return QtdCamaSolteiro;
+        return qtdCamaSolteiro;
     }
     public void setQtdCamaSolteiro(Integer qtdCamaSolteiro) {
-        QtdCamaSolteiro = qtdCamaSolteiro;
+        this.qtdCamaSolteiro = qtdCamaSolteiro;
     }
     public Boolean getLimpeza() {
         return limpeza;
@@ -84,11 +88,12 @@ public class Quarto {
     public void setLimpeza(Boolean limpeza) {
         this.limpeza = limpeza;
     }
-    public String getFoto() {
-        return foto;
+    
+    public byte[] getImagem() {
+        return imagem;
     }
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
     }
     public String getTitulo() {
         return titulo;

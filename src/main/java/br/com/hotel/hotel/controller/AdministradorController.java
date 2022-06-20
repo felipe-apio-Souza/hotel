@@ -16,9 +16,11 @@ public class AdministradorController {
     
     @Autowired private AdministradorRepositories repo;
     private String msg;
+    private Administrador administrador;
 
     @GetMapping("/administrador")
-    public String administrador(){
+    public String administrador(Model model){
+        model.addAttribute("adm", administrador);
         return "administrador";
     }
 
@@ -43,6 +45,7 @@ public class AdministradorController {
                 return "redirect:/administrador/form_adm";
             }
         }
+        administrador = adm;
         repo.save(adm);
         ra.addFlashAttribute("message", "Administrador Registrado");
         return "redirect:/administrador";

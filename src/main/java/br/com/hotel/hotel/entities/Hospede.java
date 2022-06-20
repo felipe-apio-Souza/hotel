@@ -34,9 +34,11 @@ public class Hospede {
     private String senha;
 
     //relacionamento
+    /* 
     @OneToOne
     @JoinColumn(name = "id_quarto")
     private Quarto quarto;
+    */
     @OneToOne
     @JoinColumn(name = "id_historicoCustos")
     private HistoricoCustos historicoCustos;
@@ -56,12 +58,14 @@ public class Hospede {
     public void setHistoricoCustos(HistoricoCustos historicoCustos) {
         this.historicoCustos = historicoCustos;
     }
+    /* 
     public Quarto getQuarto() {
         return quarto;
     }
     public void setQuarto(Quarto quarto) {
         this.quarto = quarto;
     }
+    */
     public String getCpf() {
         return cpf;
     }

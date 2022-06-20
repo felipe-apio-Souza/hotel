@@ -21,13 +21,15 @@ public class LiberarQuartos{
     private Long id;
 
     //relacionemtnos 
+    /*
     @OneToMany
     @JoinColumn(name = "id_quarto")
     private List<Quarto> quartos;
+    */
     @OneToOne
     @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
-
+/* 
     public List<Quarto> getQuartos() {
         return quartos;
     }
@@ -35,6 +37,7 @@ public class LiberarQuartos{
     public void setQuartos(List<Quarto> quartos) {
         this.quartos = quartos;
     }
+    */
 
     public Funcionario getFuncionario() {
         return funcionario;
