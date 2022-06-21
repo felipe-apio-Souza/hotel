@@ -3,8 +3,7 @@ package br.com.hotel.hotel.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -15,34 +14,24 @@ public class Candidatos {
         @Column(nullable = false)
         private String telefone;
         @Column(nullable = false)
-        private String curriculo;
+        private String nome;
+        @Column(nullable = false)
+        @Lob
+        private byte[] curriculo;
         @Column(nullable = false)
         private String email;
         @Column(nullable = false)
         private String numero;
         @Column(nullable = false)
         private String endereco;
+        @Column(nullable = false)
+        private String rg;
 
-        //relacionamentos 0 a 1 arrumar abaixo
-        @OneToOne
-        @JoinColumn(name = "id_funcionario")
-        private Funcionario funcionario;
-        @OneToOne
-        @JoinColumn(name = "id_contratar")
-        private Contratar contratar;
         
-        public Funcionario getFuncionario() {
-            return funcionario;
-        }
-        public void setFuncionario(Funcionario funcionario) {
-            this.funcionario = funcionario;
-        }
-        public Contratar getContratar() {
-            return contratar;
-        }
-        public void setContratar(Contratar contratar) {
-            this.contratar = contratar;
-        }
+        
+        
+        
+        
         public Candidatos() {
 
         }
@@ -58,12 +47,7 @@ public class Candidatos {
         public void setTelefone(String telefone) {
             this.telefone = telefone;
         }
-        public String getCurriculo() {
-            return curriculo;
-        }
-        public void setCurriculo(String curriculo) {
-            this.curriculo = curriculo;
-        }
+        
         public String getEmail() {
             return email;
         }
@@ -81,6 +65,30 @@ public class Candidatos {
         }
         public void setEndereco(String endereco) {
             this.endereco = endereco;
+        }
+
+        public byte[] getCurriculo() {
+            return curriculo;
+        }
+
+        public void setCurriculo(byte[] curriculo) {
+            this.curriculo = curriculo;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public String getRg() {
+            return rg;
+        }
+
+        public void setRg(String rg) {
+            this.rg = rg;
         }
         
 

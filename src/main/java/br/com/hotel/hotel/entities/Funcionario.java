@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import java.util.List;
@@ -39,12 +38,10 @@ public class Funcionario{
     @OneToMany
     @JoinColumn(name = "id_liberaQuarto")
     private List<LiberarQuartos> LiberarQuartos;
-    @OneToOne
-    @JoinColumn(name = "id_Candidato")
-    private Candidatos candidato;
-    @OneToOne
-    @JoinColumn(name = "cnpj_administrador")
-    private Administrador administrador;
+    
+    
+    
+    
     @OneToMany
     @JoinColumn(name = "id_cafeManha")
     private List<CafeManha> cafeManhas;
@@ -59,21 +56,6 @@ public class Funcionario{
         LiberarQuartos = liberarQuartos;
     }
 
-    public Candidatos getCandidato() {
-        return candidato;
-    }
-
-    public void setCandidato(Candidatos candidato) {
-        this.candidato = candidato;
-    }
-
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
 
     public List<CafeManha> getCafeManhas() {
         return cafeManhas;

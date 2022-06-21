@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fale Conosco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/faleConosco_styles.css">
+    <link rel="stylesheet" th:href="@{css/styles.css}" href="../static/css/faleConosco_styles.css">
 </head>
 <body>
     <header id="header">
@@ -14,14 +14,14 @@
               <li><a class="link" href="./index.html">Inicio</a></li>
               <li><a class="link" href="#">Pacotes</a></li>
               <li><a class="link" href="#">Fotos</a></li>
-              <li> <a class="link" href="./faleConosco.html">Fale Conosco</a></li>
+              <li> <a class="link" href="/faleConosco">Fale Conosco</a></li>
               <li><a class="link" href="#">Reservas Online</a></li>
               <li><a class="link" href="./login.html">Login</a></li>
             </ul>
             <div class="nav-redes">
-              <img src="../assets/images/facebook.png" alt="" width="50px" height="50px">
-              <img src="../assets/images/instagram.png" alt="" width="50px" height="50px">
-              <img src="../assets/images/whatsapp.png" alt="" width="50px" height="50px">
+              <img src="../static/assets/images/facebook.png" alt="" width="50px" height="50px">
+              <img src="../static/assets/images/instagram.png" alt="" width="50px" height="50px">
+              <img src="../static/assets//images/whatsapp.png" alt="" width="50px" height="50px">
              </div>
           </nav>
         
@@ -38,18 +38,18 @@
                             <p>en um ambiente envolvido por belezas naturais
                               e professionais qualificados</p>
                             </div>
-                            <form action="" method="POST">
-                                <input type="text" name="nome" placeholder="Nome" width="50px">
-                                <input type="text" name="email" placeholder="Email">
-                                <input type="text" name="cpf" placeholder="CPF">
-                                <input type="text" name="rg" placeholder="RG">
-                                <input type="text" name="telefone" placeholder="Telefone (DDD)">
-                            <input   type="file"  class="cv" name="curriculo"  onchange={curriculoUpload}>
-                                <input class="enviar" type="submit" name="aceitar" id="" value="Aceitar e Enviar Curriculo">
+                            <form  th:action="@{/faleConosco/save}" enctype="multipart/form-data" th:method="post" th:object="${candidato}">
+                                <input type="text" name="nome" placeholder="Nome" width="50px"  th:field="*{nome}">
+                                <input type="text" name="email" placeholder="Email" th:field="*{email}">
+                                <input type="text" name="cpf" placeholder="CPF" th:field="*{cpf}">
+                                <input type="text" name="rg" placeholder="RG" th:field="*{rg}">
+                                <input type="text" name="telefone" placeholder="Telefone (DDD)" th:field="*{telefone}">
+                            <input   type="file"  class="cv" accept=".pdf" name="curriculoImg">
+                                <input class="enviar" type="submit" name="aceitar" id="" accept="application/pdf" value="Aceitar e Enviar Curriculo">
                             </form>
                         </div>
                         <div class="trabalhe-imagen">
-                            <img src="../assets/images/equipo.png" alt="">
+                            <img src="../static//assets/images/equipo.png" alt="">
                         </div>
                     </section>
         
@@ -85,9 +85,9 @@
   
                 </section>
                 <section class="footer-redes">
-                  <img src="../assets/images/facebook.png" alt="" width="50px" height="50px">
-                  <img src="../assets/images/instagram.png" alt="" width="50px" height="50px">
-                  <img src="../assets/images/whatsapp.png" alt="" width="50px" height="50px">
+                  <img src="../static/assets/images/facebook.png" alt="" width="50px" height="50px">
+                  <img src="../static/assets/images/instagram.png" alt="" width="50px" height="50px">
+                  <img src="../static/assets/images/whatsapp.png" alt="" width="50px" height="50px">
                 </section>
              
             </footer>

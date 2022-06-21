@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity 
@@ -25,10 +23,7 @@ public class FaleConosco {
     private String mensagem;
 
 
-    //relacionemtnos
-    @OneToOne
-    @JoinColumn(name = "cnpj_administrador")
-    private Administrador administrador;
+    
     public FaleConosco() {
     }
     public Long getId() {
@@ -37,12 +32,7 @@ public class FaleConosco {
     public void setId(Long id) {
         this.id = id;
     }
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
+    
     public String getNome() {
         return nome;
     }

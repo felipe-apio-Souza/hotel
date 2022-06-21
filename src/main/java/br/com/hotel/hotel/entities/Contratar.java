@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,13 +21,8 @@ public class Contratar {
     @Column(nullable = false)
     private Date data;
 
-    //relacionamentos
-    @OneToMany
-    @JoinColumn(name = "id_candidato")
-    private List<Candidatos> candidatos;
-    @OneToOne
-    @JoinColumn(name = "cnpj_administrador")
-    private Administrador administrador;
+    
+    
     
     
     public Contratar() {
@@ -40,12 +34,7 @@ public class Contratar {
         this.id = id;
     }
     
-    public List<Candidatos> getCandidatos() {
-        return candidatos;
-    }
-    public void setCandidatos(List<Candidatos> candidatos) {
-        this.candidatos = candidatos;
-    }
+    
     public Date getData() {
         return data;
     }
@@ -53,11 +42,6 @@ public class Contratar {
         this.data = data;
     }
     
-    public Administrador getAdministrador() {
-        return administrador;
-    }
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
+    
     
 }
