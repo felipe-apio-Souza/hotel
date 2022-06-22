@@ -29,6 +29,8 @@ public class Candidatos {
         public void setNome(String nome) {
             this.nome = nome;
         }
+
+
         public Candidatos() {
 
         }
@@ -45,12 +47,14 @@ public class Candidatos {
             this.telefone = telefone;
         }
         
+
         public byte[] getCurriculo() {
             return curriculo;
         }
         public void setCurriculo(byte[] curriculo) {
             this.curriculo = curriculo;
         }
+
         public String getEmail() {
             return email;
         }
@@ -63,6 +67,30 @@ public class Candidatos {
         }
         public void setEndereco(String endereco) {
             this.endereco = endereco;
+        }
+
+        public byte[] getCurriculo() {
+            return curriculo;
+        }
+
+        public void setCurriculo(byte[] curriculo) {
+            this.curriculo = curriculo;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public String getRg() {
+            return rg;
+        }
+
+        public void setRg(String rg) {
+            this.rg = rg;
         }
         
 
