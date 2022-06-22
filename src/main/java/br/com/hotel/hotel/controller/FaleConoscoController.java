@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,17 +19,20 @@ import br.com.hotel.hotel.repositories.CandidatosRepositories;
 
 @Controller
 public class FaleConoscoController {
-    @Autowired private CandidatosRepositories repo;
-    //default
-    @RequestMapping("/faleConosco")
-    public String faleConosco(Model model){
 
+
+    @Autowired private CandidatosRepositories repo;
+
+    @GetMapping("/faleConosco")
+    public String faleConosco(Model model){
         model.addAttribute("candidato", new Candidatos());
         return "faleConosco";
     }
 
- @PostMapping("/faleConosco/save")
-    public String candidatoSalvar(Candidatos candidato, RedirectAttributes ra,@RequestParam("curriculoImg") MultipartFile file){
+
+    @PostMapping("/faleConosco/save")
+    public String candidatoSalvar(Candidatos candidato, RedirectAttributes ra,@RequestParam("cv") MultipartFile file){
+
         try {
             candidato.setCurriculo(file.getBytes());
         } catch (IOException e) {
@@ -41,14 +44,13 @@ public class FaleConoscoController {
         return "redirect:/faleConosco";
     }
 
-    @GetMapping("/curriculo/{curriculoId}")
+
+    @GetMapping("/candidato/{candidatocpf}")
     @ResponseBody
-    public byte[] exibirCurriculo(Model model, @PathVariable("curriculoId") String curriculoId){
-        Candidatos candidatos = repo.getOne(curriculoId);
-        return candidatos.getCurriculo();
+    public byte[] exibirImagem(Model model, @PathVariable("candidatocpf") String candidatocpf){
+        Candidatos candidato = repo.getOne(candidatocpf);
+        return candidato.getCurriculo();
     }
-
-
 
 
 }

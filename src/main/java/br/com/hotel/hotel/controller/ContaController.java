@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ContaController {
     
     @GetMapping("/administrador/conta")
-    public String contratar(){
+    public String conta(){
         return "conta";
     }
 }

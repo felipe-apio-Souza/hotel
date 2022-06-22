@@ -20,12 +20,21 @@ public class Contratar {
     private Long id;
     @Column(nullable = false)
     private Date data;
+    @Column(nullable = false)
+    private String candidatoCpf;
+
+
 
     
     
     
     
-    public Contratar() {
+   
+    public String getCandidatoCpf() {
+        return candidatoCpf;
+    }
+    public void setCandidatoCpf(String candidatoCpf) {
+        this.candidatoCpf = candidatoCpf;
     }
     public Long getId() {
         return id;

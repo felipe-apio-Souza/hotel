@@ -14,24 +14,23 @@ public class Candidatos {
         @Column(nullable = false)
         private String telefone;
         @Column(nullable = false)
-        private String nome;
-        @Column(nullable = false)
         @Lob
         private byte[] curriculo;
         @Column(nullable = false)
         private String email;
         @Column(nullable = false)
-        private String numero;
-        @Column(nullable = false)
         private String endereco;
-        @Column(nullable = false)
-        private String rg;
+        @Column(nullable = true)
+        private String nome;
+        
+        public String getNome() {
+            return nome;
+        }
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
 
-        
-        
-        
-        
-        
+
         public Candidatos() {
 
         }
@@ -48,18 +47,21 @@ public class Candidatos {
             this.telefone = telefone;
         }
         
+
+        public byte[] getCurriculo() {
+            return curriculo;
+        }
+        public void setCurriculo(byte[] curriculo) {
+            this.curriculo = curriculo;
+        }
+
         public String getEmail() {
             return email;
         }
         public void setEmail(String email) {
             this.email = email;
         }
-        public String getNumero() {
-            return numero;
-        }
-        public void setNumero(String numero) {
-            this.numero = numero;
-        }
+        
         public String getEndereco() {
             return endereco;
         }
