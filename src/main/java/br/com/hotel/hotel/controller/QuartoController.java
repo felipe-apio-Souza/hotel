@@ -21,7 +21,6 @@ import br.com.hotel.hotel.repositories.QuartoRepositories;
 public class QuartoController {
 
     @Autowired private QuartoRepositories repo;
-    private static String caminhoImagens = "C:/Users/claud/OneDrive/Documentos/imagens_hotel";
 
     @GetMapping("/administrador/quartos")
     public String quarto(Model model){

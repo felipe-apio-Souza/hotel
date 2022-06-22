@@ -21,10 +21,6 @@ public class Contratar {
     @Column(nullable = false)
     private Date data;
 
-    //relacionamentos
-    @OneToMany
-    @JoinColumn(name = "id_candidato")
-    private List<Candidatos> candidatos;
     
     
     
@@ -37,12 +33,7 @@ public class Contratar {
         this.id = id;
     }
     
-    public List<Candidatos> getCandidatos() {
-        return candidatos;
-    }
-    public void setCandidatos(List<Candidatos> candidatos) {
-        this.candidatos = candidatos;
-    }
+    
     public Date getData() {
         return data;
     }
