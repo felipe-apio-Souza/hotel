@@ -29,52 +29,44 @@ public class CafeManha {
     private String bebida;
 
     //relacionamento
-    @OneToMany
-    @JoinColumn(name = "hospedes")
-    private List<Hospede> hospedes;
+   
     @OneToOne
     @JoinColumn(name = "funcionario")
     private Funcionario funcionario;
     public Long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
     public Date getHorarioInicio() {
         return horarioInicio;
     }
-    public void setHorarioInicio(Date horarioInicio) {
+    public void setHorarioInicio(final Date horarioInicio) {
         this.horarioInicio = horarioInicio;
     }
     public Date getHorarioTermino() {
         return horarioTermino;
     }
-    public void setHorarioTermino(Date horarioTermino) {
+    public void setHorarioTermino(final Date horarioTermino) {
         this.horarioTermino = horarioTermino;
     }
     public String getComida() {
         return comida;
     }
-    public void setComida(String comida) {
+    public void setComida(final String comida) {
         this.comida = comida;
     }
     public String getBebida() {
         return bebida;
     }
-    public void setBebida(String bebida) {
+    public void setBebida(final String bebida) {
         this.bebida = bebida;
-    }
-    public List<Hospede> getHospedes() {
-        return hospedes;
-    }
-    public void setHospedes(List<Hospede> hospedes) {
-        this.hospedes = hospedes;
     }
     public Funcionario getFuncionario() {
         return funcionario;
     }
-    public void setFuncionario(Funcionario funcionario) {
+    public void setFuncionario(final Funcionario funcionario) {
         this.funcionario = funcionario;
     }
     

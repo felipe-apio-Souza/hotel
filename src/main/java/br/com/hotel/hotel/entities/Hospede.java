@@ -42,16 +42,7 @@ public class Hospede {
     @OneToOne
     @JoinColumn(name = "id_historicoCustos")
     private HistoricoCustos historicoCustos;
-    @OneToOne
-    @JoinColumn(name = "id_cafeManha")
-    private CafeManha cafeManha;
-
-    public CafeManha getCafeManha() {
-        return cafeManha;
-    }
-    public void setCafeManha(CafeManha cafeManha) {
-        this.cafeManha = cafeManha;
-    }
+    
     public HistoricoCustos getHistoricoCustos() {
         return historicoCustos;
     }
