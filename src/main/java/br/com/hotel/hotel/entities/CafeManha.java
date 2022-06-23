@@ -20,39 +20,22 @@ public class CafeManha {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private Date horarioInicio;
+    private String horarioInicio;
     @Column(nullable = false)
-    private Date horarioTermino;
+    private String horarioTermino;
     @Column(nullable = false)
     private String comida;
     @Column(nullable = false)
     private String bebida;
 
-    //relacionamento
-    @OneToMany
-    @JoinColumn(name = "hospedes")
-    private List<Hospede> hospedes;
-    @OneToOne
-    @JoinColumn(name = "funcionario")
-    private Funcionario funcionario;
+    
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-    public Date getHorarioInicio() {
-        return horarioInicio;
-    }
-    public void setHorarioInicio(Date horarioInicio) {
-        this.horarioInicio = horarioInicio;
-    }
-    public Date getHorarioTermino() {
-        return horarioTermino;
-    }
-    public void setHorarioTermino(Date horarioTermino) {
-        this.horarioTermino = horarioTermino;
-    }
+    
     public String getComida() {
         return comida;
     }
@@ -65,17 +48,22 @@ public class CafeManha {
     public void setBebida(String bebida) {
         this.bebida = bebida;
     }
-    public List<Hospede> getHospedes() {
-        return hospedes;
+
+    public String getHorarioInicio() {
+        return horarioInicio;
     }
-    public void setHospedes(List<Hospede> hospedes) {
-        this.hospedes = hospedes;
+
+    public void setHorarioInicio(String horarioInicio) {
+        this.horarioInicio = horarioInicio;
     }
-    public Funcionario getFuncionario() {
-        return funcionario;
+
+    public String getHorarioTermino() {
+        return horarioTermino;
     }
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
+
+    public void setHorarioTermino(String horarioTermino) {
+        this.horarioTermino = horarioTermino;
     }
+    
     
 }
