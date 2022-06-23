@@ -23,6 +23,8 @@ public class Contratar {
     @Column(nullable = false)
     private String candidatoCpf;
 
+
+
     
     
     

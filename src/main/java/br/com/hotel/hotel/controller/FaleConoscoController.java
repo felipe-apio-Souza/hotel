@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +20,7 @@ import br.com.hotel.hotel.repositories.CandidatosRepositories;
 @Controller
 public class FaleConoscoController {
 
+
     @Autowired private CandidatosRepositories repo;
 
     @GetMapping("/faleConosco")
@@ -27,8 +29,10 @@ public class FaleConoscoController {
         return "faleConosco";
     }
 
+
     @PostMapping("/faleConosco/save")
     public String candidatoSalvar(Candidatos candidato, RedirectAttributes ra,@RequestParam("cv") MultipartFile file){
+
         try {
             candidato.setCurriculo(file.getBytes());
         } catch (IOException e) {
@@ -40,10 +44,13 @@ public class FaleConoscoController {
         return "redirect:/faleConosco";
     }
 
+
     @GetMapping("/candidato/{candidatocpf}")
     @ResponseBody
     public byte[] exibirImagem(Model model, @PathVariable("candidatocpf") String candidatocpf){
         Candidatos candidato = repo.getOne(candidatocpf);
         return candidato.getCurriculo();
     }
+
+
 }
