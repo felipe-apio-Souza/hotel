@@ -1,6 +1,5 @@
 package br.com.hotel.hotel.controller;
 
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import br.com.hotel.hotel.repositories.CafeManhaRepositories;
 import br.com.hotel.hotel.entities.CafeManha;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -57,4 +57,11 @@ public class CafeManhaController {
         return "cafemanhaNew";
 
     }
+
+    @GetMapping("/cliente/cafemanha")
+    public String cafemanhaCliente (Model model){
+        model.addAttribute("listcafe", repo.findAll());
+        return "cafemanhaCliente";
+    }
+
 }
