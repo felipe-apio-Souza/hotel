@@ -5,33 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inserir Café da manha</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
   </head>
   <body>
     <nav id="navegador">
-        <ul class="ulNav">
-          <li><a class="link" href="#">Inicio</a></li>
-          <li><a class="link" href="#">Conta</a></li>
-          <li><a class="link" href="#">Contratar</a></li>
-          <li> <a class="link" href="#">Fale Conosco</a></li>
-          <li> <a class="link" href="#">Quarto</a></li>
-        </ul>
-        <div class="nav-redes">
-          <img src="assets/images/facebook.png" alt="" width="50px" height="50px">
-          <img src="assets/images/instagram.png" alt="" width="50px" height="50px">
-          <img src="assets/images/whatsapp.png" alt="" width="50px" height="50px">
-         </div>
-      </nav>
+      <ul class="ulNav">
+        <li><a class="link" href="/funcionario">Inicio</a></li>
+        <li><a class="link" href="/funcionario/cafemanha">Café da Manhã</a></li>
+        <li><a class="link" href="/administrador/limpeza">Limpeza</a></li>
+        <li> <a class="link" href="/administrador/liberar_quartos">Liberar Quartos</a></li>
+      </ul>
+      <div class="nav-redes">
+        <img th:src="@{/assets/images/facebook.png}" alt="" width="50px" height="50px">
+        <img th:src="@{/assets/images/instagram.png}" alt="" width="50px" height="50px">
+        <img th:src="@{/assets/images/whatsapp.png}" alt="" width="50px" height="50px">
+       </div>
+    </nav>
 
       <div class="text-center container-fluid">
-        <form th:object="${cafemanha}" action="/funcionario/cafemanha/save" method="POST">
+        <form th:object="${cafemanha}" action="/funcionario/cafemanha/save" method="POST" style="max-width: 500px; margin: 0 auto;">
             <div class="form-group">
-              <label for="horarioInicio"> horario De Inicio: </label>
-              <input type="date" class="form-control"  th:field="*{horarioInicio}">
-            </div>
-            <div class="form-group">
-                <label for="horarioTermino"> horario De Término: </label>
-                <input type="date" class="form-control"  th:field="*{horarioTermino}">
+              <label for="horarioInicio"> Data: </label>
+              <input type="date" class="form-control"  th:field="*{data}">
             </div>
             <div class="form-group">
               <label for="comida"> Comida: </label>
@@ -40,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="bebida"> Bebida: </label>
-                <input type="text" class="form-control-file" th:field="*{bebida}">
+                <input type="text" class="form-control" th:field="*{bebida}">
             </div>
             <button type="submit" class="btn btn-primary">Concluído</button>
           </form>

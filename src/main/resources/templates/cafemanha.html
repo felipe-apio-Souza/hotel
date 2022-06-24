@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>café da manha</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{css/styles.css}" href="css/styles.css">
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
   </head>
   <body>
     <header id="header">
         <nav id="navegador">
             <ul class="ulNav">
-              <li><a class="link" href="/administrador">Inicio</a></li>
-              <li><a class="link" href="/administrador/conta">Conta</a></li>
-              <li><a class="link" href="/administrador/contratar">Contratar</a></li>
-              <li> <a class="link" href="/administrador/fale_conosco">Fale Conosco</a></li>
-              <li> <a class="link" href="/administrador/quartos">Quartos</a></li>
+              <li><a class="link" href="/funcionario">Inicio</a></li>
+              <li><a class="link" href="/funcionario/cafemanha">Café da Manhã</a></li>
+              <li><a class="link" href="/administrador/limpeza">Limpeza</a></li>
+              <li> <a class="link" href="/administrador/liberar_quartos">Liberar Quartos</a></li>
             </ul>
             <div class="nav-redes">
-              <img src="assets/images/facebook.png" alt="" width="50px" height="50px">
-              <img src="assets/images/instagram.png" alt="" width="50px" height="50px">
-              <img src="assets/images/whatsapp.png" alt="" width="50px" height="50px">
-             </div>
+                <img th:src="@{/assets/images/facebook.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/instagram.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/whatsapp.png}" alt="" width="50px" height="50px">
+               </div>
           </nav>
-
           <div class="container-fluid text-center">
             <div class="text-center"><h2> Café da manha </h2></div>
             
@@ -36,8 +34,7 @@
                     <thead class="thead-dark">
                         <tr> 
                             <th>ID</th>
-                            <th>Horario de inicio</th>
-                            <th>Horario de término</th>
+                            <th>Data</th>
                             <th>comida</th>
                             <th>bebida</th>
                             <th></th>
@@ -47,8 +44,7 @@
                         <th:block th:each="cafe : ${listCafe}">
                             <tr>
                                 <td>[[${cafe.id}]]</td>
-                                <td>[[${cafe.horarioInicio}]]</td>
-                                <td>[[${cafe.horarioTermino}]]</td>
+                                <td>[[${cafe.data}]]</td>
                                 <td>[[${cafe.comida}]]</td>
                                 <td>[[${cafe.bebida}]]</td>
                                 <td>

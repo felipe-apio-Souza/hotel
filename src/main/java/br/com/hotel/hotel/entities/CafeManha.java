@@ -1,16 +1,11 @@
 package br.com.hotel.hotel.entities;
 
-import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,9 +15,7 @@ public class CafeManha {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String horarioInicio;
-    @Column(nullable = false)
-    private String horarioTermino;
+    private String data;
     @Column(nullable = false)
     private String comida;
     @Column(nullable = false)
@@ -48,22 +41,14 @@ public class CafeManha {
     public void setBebida(String bebida) {
         this.bebida = bebida;
     }
-
-    public String getHorarioInicio() {
-        return horarioInicio;
+    public String getData() {
+        return data;
+    }
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public void setHorarioInicio(String horarioInicio) {
-        this.horarioInicio = horarioInicio;
-    }
-
-    public String getHorarioTermino() {
-        return horarioTermino;
-    }
-
-    public void setHorarioTermino(String horarioTermino) {
-        this.horarioTermino = horarioTermino;
-    }
+    
     
     
 }
