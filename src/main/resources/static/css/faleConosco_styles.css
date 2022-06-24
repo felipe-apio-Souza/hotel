@@ -53,117 +53,40 @@
 .nav-redes img{
     margin: 0px 10px 0px 10px;
 }
-/*MAIN*/
-.formulario{
-    margin-top: 50px;
-    width: 500px;
-    height: 500px;
-    background-color: #012952;
-}
-.formulario form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    
-}
-.formulario form label{
-    display: flex;
-    justify-content: center;
-    color:#c58b05;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top:10px;
-    margin-bottom: 10px;
-}
-.formulario button{
-    border: 1px solid #c58b05;
-    background-color: #012952;
-    color: #c58b05;
-    width: 250px;
-    height: 50px;
-}
-.usuario{
-    width: 250px;
-    
-}
-.senha{
-    width: 250px;
-}
-.formulario button:hover{
-    background-color: #c58b05;
-    color: white;
-    cursor: pointer;
-}
-.div-button-uno{
-    margin-top: 50px;
 
-}
+
 
 /*FORM TRABALHE*/
 #section{
     width: 100%;
-    height: 640px;
+    height: 550px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around;
     
     background-color: #e4a207;
    
 }
-.trabalhe{
-    width: 50%;
-    height: 640px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0px 0px 0px 150px;
-    
-}
-.form-trabalhe-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-
-}
-.form-trabalhe-title h3,p{
-    color: white;
+.titulo h2{
     font-weight: bold;
-   
-}
-
-
-.form-trabalhe form{
+    letter-spacing: 1.5px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
 }
-.form-trabalhe form input{
-    width: 250px;
-    margin: 10px;
+.section-formulario form{
+    display: flex;
+    flex-direction: column;
 }
 
-.form-trabalhe form .enviar{
-    background-color:#0595CF;
-    border: transparent;
-    height: 35px;
-    color: white;
+.imagen{
+    display: flex;
+    flex-wrap: wrap;
 }
-.form-trabalhe form .enviar:hover{
-    cursor: pointer;
-    background-color: #012952;
-}
-.trabalhe-imagen img{
-    width: 100%;
-    height: 640px;
-    margin: 0px 0px 0px 150px;
+
+.imagen img{
+    width: 800px;
+    height: 550px;
 }
 
 /*FIM FORM TRABALHE*/
