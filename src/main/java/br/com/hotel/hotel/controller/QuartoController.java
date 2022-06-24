@@ -39,7 +39,6 @@ public class QuartoController {
         try {
             quarto.setImagem(file.getBytes());
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         quarto.setDisponibilidade(true);
@@ -52,7 +51,7 @@ public class QuartoController {
     @GetMapping("/imagem/{quartoid}")
     @ResponseBody
     public byte[] exibirImagem(Model model, @PathVariable("quartoid") Long idquarto){
-        Quarto quarto = repo.getOne(idquarto);
+        Quarto quarto = repo.getReferenceById(idquarto);
         return quarto.getImagem();
     }
 }

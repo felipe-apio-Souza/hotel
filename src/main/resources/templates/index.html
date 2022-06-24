@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hotel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{css/styles.css}" href="../static/css//styles.css" type="text/css">
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
   </head>
   <body>
     <header id="header">
-        <nav id="navegador">
-            <ul class="ulNav">
-              <li><a class="link" href="../templates/index.html">Inicio</a></li>
-              <li><a class="link" href="#">Pacotes</a></li>
-              <li><a class="link" href="#">Fotos</a></li>
-              <li> <a class="link" href="/faleConosco">Fale Conosco</a></li>
-              <li><a class="link" href="#">Reservas Online</a></li>
-              <li><a class="link" href="../templates/login.html">Login</a></li>
-            </ul>
-            <div class="nav-redes">
-              <img src="../static/assets/images/facebook.png" alt="" width="50px" height="50px">
-              <img src="../static/assets/images/instagram.png" alt="" width="50px" height="50px">
-              <img src="../static/assets/images/whatsapp.png" alt="" width="50px" height="50px">
-             </div>
-          </nav>
+      <nav id="navegador">
+        <ul class="ulNav">
+          <li><a class="link" href="/">Inicio</a></li>
+          <li><a class="link" href="/pacotes">Pacotes</a></li>
+          <li><a class="link" href="/fotos">Fotos</a></li>
+          <li> <a class="link" href="/faleConosco">Fale Conosco</a></li>
+          <li><a class="link" href="/reservas_online">Reservas Online</a></li>
+          <li><a class="link" href="/login">Login</a></li>
+        </ul>
+        <div class="nav-redes">
+          <img th:src="@{/assets/images/facebook.png}" alt="" width="50px" height="50px">
+          <img th:src="@{/assets/images/instagram.png}" alt="" width="50px" height="50px">
+          <img th:src="@{/assets/images/whatsapp.png}" alt="" width="50px" height="50px">
+         </div>
+      </nav>
         
          </header>
          <main class="conteudo-geral">
@@ -45,28 +45,28 @@
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="../static/assets/images/dracula.jpg" class="d-block w-100" alt="..."  height="728px">
+                        <img th:src="@{/assets/images/dracula.jpg}" class="d-block w-100" alt="..."  height="728px">
                         <div class="carousel-caption d-none d-md-block">
                           
               
                         </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="../static/assets/images/dracula_habitacion.jpg" class="d-block w-100" alt="..."  height="728px" >
+                      <img th:src="@{/assets/images/dracula_habitacion.jpg}" class="d-block w-100" alt="..."  height="728px" >
                       <div class="carousel-caption d-none d-md-block">
                         
             
                       </div>
                       </div>
                       <div class="carousel-item">
-                        <img src="../static/assets/images/dracula2.jpg" class="d-block w-100" alt="..."  height="728px" >
+                        <img th:src="@{/assets/images/dracula2.jpg}" class="d-block w-100" alt="..."  height="728px" >
                         <div class="carousel-caption d-none d-md-block">
                           
               
                         </div>
                       </div>
                       <div class="carousel-item">
-                        <img src="../static/assets/images/dracula_sala.jpg" class="d-block w-100" alt="..."  height="728px">
+                        <img th:src="@{/assets/images/dracula_sala.jpg}" class="d-block w-100" alt="..."  height="728px">
                         <div class="carousel-caption d-none d-md-block">
               
               
@@ -106,44 +106,20 @@
                 </div>
             </section>
             <section class="section">
-                <section class="section-pacote">
-                    <div class="pacote-cuadro-uno">
-                        <img src="../static/assets/images/hotel_lujo.jpeg" alt="" width="300px" height="250px">
-                    </div>
-                    <section class="section-descripcao">
-                        <div class="descripcao">
-                            <span class="diaria">Diarias a partir de R$1.250</span> </br>
-                            <span class="data">A partir de 11/05-Minimo 3 diarias</span>
-                            <button class="button-reservar">Reservar Agora</button>
-                        </div>
-                    </section>
-                </section>
-                <section class="section-pacote">
+               <section class="section-pacote" th:each="quarto : ${listQuarto}">
                   <div class="pacote-cuadro-uno">
-                      <img src="../static/assets/images/hotel_lujo.jpeg" alt="" width="300px" height="250px">
+                    <img th:src="|/imagem/${quarto.id}|" alt="Imagem" width="300px" height="250px">
                   </div>
                   <section class="section-descripcao">
                       <div class="descripcao">
-                          <span class="diaria">Diarias a partir de R$1.250</span> </br>
-                          <span class="data">A partir de 11/05-Minimo 3 diarias</span>
+                          <span class="diaria"> Diarias a partir de R$ [[${quarto.precoDiaria}]]</span> </br>
+                          <span class="data">[[${quarto.descricao}]]</span>
                           <button class="button-reservar">Reservar Agora</button>
                       </div>
                   </section>
               </section>
-              <section class="section-pacote">
-                <div class="pacote-cuadro-uno">
-                    <img src="../static/assets/images/hotel_lujo.jpeg" alt="" width="300px" height="250px">
-                </div>
-                <section class="section-descripcao">
-                    <div class="descripcao">
-                        <span class="diaria">Diarias a partir de R$1.250</span> </br>
-                        <span class="data">A partir de 11/05-Minimo 3 diarias</span>
-                        <button class="button-reservar">Reservar Agora</button>
-                    </div>
-                </section>
-            </section>
-                
-            </section>
+           </section>
+           
             <section class="section">
               <section class="section-azul">
                 <div class="div-azul">
@@ -160,7 +136,7 @@
 
             <section>
               <div class="relleno-imagen">
-                <img src="../static/assets/images/familia.jpg" alt="" width="100%" height="750px">
+                <img th:src="@{/assets/images/familia.jpg}" alt="" width="100%" height="750px">
               </div>
             </section>
 
@@ -206,21 +182,14 @@
 
               </section>
               <section class="footer-redes">
-                <img src="../static/assets/images/facebook.png" alt="" width="50px" height="50px">
-                <img src="../static/assets/images/instagram.png" alt="" width="50px" height="50px">
-                <img src="../static/assets/images/whatsapp.png" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/facebook.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/instagram.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/whatsapp.png}" alt="" width="50px" height="50px">
               </section>
            
           </footer>
 
          </main>
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

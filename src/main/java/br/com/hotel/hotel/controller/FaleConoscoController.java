@@ -36,7 +36,6 @@ public class FaleConoscoController {
         try {
             candidato.setCurriculo(file.getBytes());
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         repo.save(candidato);
@@ -48,7 +47,7 @@ public class FaleConoscoController {
     @GetMapping("/candidato/{candidatocpf}")
     @ResponseBody
     public byte[] exibirImagem(Model model, @PathVariable("candidatocpf") String candidatocpf){
-        Candidatos candidato = repo.getOne(candidatocpf);
+        Candidatos candidato = repo.getReferenceById(candidatocpf);
         return candidato.getCurriculo();
     }
 

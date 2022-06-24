@@ -43,6 +43,8 @@ public class Hospede {
     @JoinColumn(name = "id_historicoCustos")
     private HistoricoCustos historicoCustos;
     
+
+    
     public HistoricoCustos getHistoricoCustos() {
         return historicoCustos;
     }
