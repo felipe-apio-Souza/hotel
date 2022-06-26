@@ -17,4 +17,10 @@ public class AppController {
         return "index";
     }
 
+    @GetMapping("/pacotes")
+    public String pacotes(Model model){
+        model.addAttribute("listQuarto", repo.findAll());
+        return "pacotes";
+    }
+
 }

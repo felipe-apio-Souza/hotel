@@ -2,6 +2,7 @@ package br.com.hotel.hotel.controller;
 
 
 import java.io.IOException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,5 +54,12 @@ public class QuartoController {
     public byte[] exibirImagem(Model model, @PathVariable("quartoid") Long idquarto){
         Quarto quarto = repo.getReferenceById(idquarto);
         return quarto.getImagem();
+    }
+
+    @GetMapping("/quarto/{quartoid}")
+    public String quartoPage(@PathVariable("quartoid") Long id, Model model, RedirectAttributes ra){
+        model.addAttribute("quarto", repo.getOne(id));
+        return "quartoClient";
+
     }
 }
