@@ -19,8 +19,6 @@ public class Hospede {
     @Column(nullable = false)
     private String telefone;
     @Column(nullable = false)
-    private String endereco;
-    @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
     private Date inicioHospedagem;
@@ -39,18 +37,11 @@ public class Hospede {
     @JoinColumn(name = "id_quarto")
     private Quarto quarto;
     */
-    @OneToOne
-    @JoinColumn(name = "id_historicoCustos")
-    private HistoricoCustos historicoCustos;
+    
     
 
     
-    public HistoricoCustos getHistoricoCustos() {
-        return historicoCustos;
-    }
-    public void setHistoricoCustos(HistoricoCustos historicoCustos) {
-        this.historicoCustos = historicoCustos;
-    }
+    
     /* 
     public Quarto getQuarto() {
         return quarto;
@@ -77,12 +68,7 @@ public class Hospede {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    public String getEndereco() {
-        return endereco;
-    }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+    
     public String getNome() {
         return nome;
     }

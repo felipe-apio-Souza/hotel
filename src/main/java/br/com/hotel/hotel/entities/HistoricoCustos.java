@@ -23,9 +23,7 @@ public class HistoricoCustos {
     
 
     //relacionemtnos
-    @OneToMany
-    @JoinColumn(name = "cpf_hospede")
-    private List<Hospede> hospede;
+   
 
     public Long getId() {
         return id;
@@ -43,13 +41,7 @@ public class HistoricoCustos {
         this.date = date;
     }
 
-    public List<Hospede> getHospede() {
-        return hospede;
-    }
-
-    public void setHospede(List<Hospede> hospede) {
-        this.hospede = hospede;
-    }
+    
 
     
 }
