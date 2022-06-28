@@ -104,19 +104,61 @@
 
 
 /* FORM FALE CONOSCO */
-
-.conosco {
+h2{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 70px;
+}
+h4{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 130px;
+}
+.h42{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 170px;
+    font-size: medium;
+}
+hr{
+    width: 615px;
+    height: 2px;
+    background-color: #e4a207;
+    color: #e4a207;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 230px;
+}
+.h423{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 250px;
+}
+.h424{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 285px;
+    font-size: medium;
+}
+.conosco{
+    width: 130%;
+    height: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+/* .conosco {
     padding-left: 50%;
     margin: 100px;
     height: 540px;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
-}
+    /* flex-direction: column; 
+}*/
 
 .form-faleconosco form {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
