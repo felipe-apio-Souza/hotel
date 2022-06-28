@@ -21,9 +21,9 @@ public class Hospede {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
-    private Date inicioHospedagem;
+    private String inicioHospedagem;
     @Column(nullable = false)
-    private Date fimHospedagem;
+    private String fimHospedagem;
     @Column(nullable = false)
     private Double custoHospedagem;
     @Column(nullable = false)
@@ -75,16 +75,17 @@ public class Hospede {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Date getInicioHospedagem() {
+    
+    public String getInicioHospedagem() {
         return inicioHospedagem;
     }
-    public void setInicioHospedagem(Date inicioHospedagem) {
+    public void setInicioHospedagem(String inicioHospedagem) {
         this.inicioHospedagem = inicioHospedagem;
     }
-    public Date getFimHospedagem() {
+    public String getFimHospedagem() {
         return fimHospedagem;
     }
-    public void setFimHospedagem(Date fimHospedagem) {
+    public void setFimHospedagem(String fimHospedagem) {
         this.fimHospedagem = fimHospedagem;
     }
     public Double getCustoHospedagem() {

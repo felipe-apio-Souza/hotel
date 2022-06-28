@@ -35,9 +35,10 @@ public class HospedagemController {
     }
 
     @PostMapping("/quarto/save/{quartoid}")
-    public String hospedar(@PathVariable("quartoid") Long id, Hospede hospede, @RequestParam("inicio") String inicio, @RequestParam("fim") String fim){
+    public String hospedar(@PathVariable("quartoid") Long id, Hospede hospede, @RequestParam("inicio") String inicio, @RequestParam("fim") String fim) throws ParseException{
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        
+    /*
         try {
             Date inicioDate = formatter.parse(inicio);
             Date fimDate = formatter.parse(fim);
@@ -59,6 +60,16 @@ public class HospedagemController {
             e.printStackTrace();
             return "redirect:/quarto/{quartoid}";
         }
+         */
         
+        //hospede.setCustoHospedagem(dias * repoQuarto.getOne(id).getPrecoDiaria());
+
+        repoHospede.save(hospede);
+        repoQuarto.getOne(id).setDisponibilidade(false);
+        Hospedagem hospedagem = new Hospedagem();
+        hospedagem.setCpfHospede(hospede.getCpf());
+        hospedagem.setIdQuarto(id);
+        repo.save(hospedagem);
+        return "redirect:/quarto/{quartoid}";
     }
 }
