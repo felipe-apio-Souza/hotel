@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>café da manha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
+  </head>
+  <body>
+    <header id="header">
+        <nav id="navegador">
+            <ul class="ulNav">
+              <li><a class="link" href="/funcionario">Inicio</a></li>
+              <li><a class="link" href="/funcionario/cafemanha">Café da Manhã</a></li>
+              <li><a class="link" href="/administrador/limpeza">Limpeza</a></li>
+              <li> <a class="link" href="/administrador/liberar_quartos">Liberar Quartos</a></li>
+            </ul>
+            <div class="nav-redes">
+                <img th:src="@{/assets/images/facebook.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/instagram.png}" alt="" width="50px" height="50px">
+                <img th:src="@{/assets/images/whatsapp.png}" alt="" width="50px" height="50px">
+               </div>
+          </nav>
+          <div class="container-fluid text-center">
+            <div class="text-center"><h2> Café da manha </h2></div>
+            
+            <div class="m-2">
+                <a class="h3" th:href="@{/funcionario/cafeManha/novo}">Adicionar Novo cafe da manha</a>
+            </div>
+
+            <div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr> 
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>comida</th>
+                            <th>bebida</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="cafe : ${listCafe}">
+                            <tr>
+                                <td>[[${cafe.id}]]</td>
+                                <td>[[${cafe.data}]]</td>
+                                <td>[[${cafe.comida}]]</td>
+                                <td>[[${cafe.bebida}]]</td>
+                                <td>
+                                    <a class="h4 mr-3" th:href="@{'/funcionario/cafemanha/edit/' + ${cafe.id}}">Edit</a>
+                                    <a class="h4" th:href="@{'/funcionario/cafemanha/delete/' + ${cafe.id}}">Delete</a>
+                                </td>
+                            </tr>
+                        </th:block>
+    
+                    </tbody>
+                </table>
+    
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

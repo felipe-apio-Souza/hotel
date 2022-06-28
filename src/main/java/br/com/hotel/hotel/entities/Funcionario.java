@@ -41,10 +41,7 @@ public class Funcionario{
     
     
     
-    
-    @OneToMany
-    @JoinColumn(name = "id_cafeManha")
-    private List<CafeManha> cafeManhas;
+   
 
     
 
@@ -57,13 +54,7 @@ public class Funcionario{
     }
 
 
-    public List<CafeManha> getCafeManhas() {
-        return cafeManhas;
-    }
-
-    public void setCafeManhas(List<CafeManha> cafeManhas) {
-        this.cafeManhas = cafeManhas;
-    }
+    
 
     public Long getId() {
         return id;
