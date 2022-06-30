@@ -141,7 +141,7 @@ hr{
     font-size: medium;
 }
 .conosco{
-    width: 130%;
+    /* width: 130%; */
     height: 540px;
     display: flex;
     flex-wrap: wrap;
@@ -157,6 +157,7 @@ hr{
 }*/
 
 .form-faleconosco form {
+    margin-left:  600px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
