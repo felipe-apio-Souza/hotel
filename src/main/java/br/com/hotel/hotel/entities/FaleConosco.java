@@ -67,4 +67,6 @@ public class FaleConosco {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
+    public void setNome(byte[] bytes) {
+    }
 }
