@@ -46,7 +46,7 @@ public class FaleConoscoController {
 
     @GetMapping("/faleconosco/{faleconosconome}")
     @ResponseBody
-    public String exibirImagem(Model model, @PathVariable("faleconosconome") Long faleconosconome){
+    public String exibirString(Model model, @PathVariable("faleconosconome") Long faleconosconome){
         FaleConosco faleConosco = repo.getReferenceById(faleconosconome);
         return faleConosco.getNome();
     }
