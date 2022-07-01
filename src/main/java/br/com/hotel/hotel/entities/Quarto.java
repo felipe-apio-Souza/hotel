@@ -25,7 +25,7 @@ public class Quarto {
     @Column(nullable = false)
     @Lob
     private byte[] imagem;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String titulo;
     @Column(nullable = false)
     private String descricao;

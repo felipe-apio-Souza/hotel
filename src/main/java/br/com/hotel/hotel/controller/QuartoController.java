@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,15 +37,22 @@ public class QuartoController {
     }
 
     @PostMapping("/administrador/quartos/novo/save")
-    public String quartoSalvar(Quarto quarto, RedirectAttributes ra,@RequestParam("imagemQuarto") MultipartFile file){
+    public String quartoSalvar(Optional<Quarto> quarto,RedirectAttributes ra,@RequestParam("imagemQuarto") MultipartFile file){
+        System.out.println("Quarto Nome: " + quarto.get().getTitulo());
+        for(Quarto q : repo.findAll()){
+            if(q.getTitulo().equals(quarto.get().getTitulo())){
+                quarto.get().setId(q.getId());
+            }
+        }
+        System.out.println("Quarto Id: " + quarto.get().getId());
         try {
-            quarto.setImagem(file.getBytes());
+            quarto.get().setImagem(file.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        quarto.setDisponibilidade(true);
-        quarto.setLimpeza(false);
-        repo.save(quarto);
+        quarto.get().setDisponibilidade(true);
+        quarto.get().setLimpeza(false);
+        repo.save(quarto.get());
         ra.addFlashAttribute("message", "Quarto Cadastrado com sucesso");
         return "redirect:/administrador/quartos";
     }
@@ -68,4 +76,12 @@ public class QuartoController {
         repo.deleteById(id);
         return "redirect:/administrador/quartos";
     }
+
+    @GetMapping("administrador/quartos/edit/{quartoid}")
+    public String quartoEdit(@PathVariable("quartoid") Long id, Model model){
+        Optional<Quarto> quarto = repo.findById(id);
+        model.addAttribute("quarto", quarto.get());
+        return "quartos_novo";
+    }
+
 }
