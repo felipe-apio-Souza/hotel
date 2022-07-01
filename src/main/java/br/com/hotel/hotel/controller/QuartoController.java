@@ -62,4 +62,10 @@ public class QuartoController {
         return "quartoClient";
 
     }
+
+    @GetMapping("/administrador/quartos/delete/{quartoid}")
+    public String quartoDelete(@PathVariable("quartoid") Long id){
+        repo.deleteById(id);
+        return "redirect:/administrador/quartos";
+    }
 }
